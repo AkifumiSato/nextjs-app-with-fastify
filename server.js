@@ -7,7 +7,9 @@ const nextHandle = nextApp.getRequestHandler()
 nextApp.prepare()
   .then(async () => {
     // prepare fastify
-    const fastify = Fastify()
+    const fastify = Fastify({
+      logger: true,
+    })
 
     fastify.all('*', (req, reply) => nextHandle(req.raw, reply.raw))
 
