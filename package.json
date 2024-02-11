@@ -1,11 +1,15 @@
 {
   "private": true,
   "scripts": {
-    "dev": "next dev --turbo",
+    "dev": "node server.js",
     "build": "next build",
-    "start": "next start"
+    "start": "NODE_ENV=production node server.js",
+    "start:next": "next start",
+    "clean-start:next": "next build && next start",
+    "clean-start:fastify": "next build && NODE_ENV=production node server.js"
   },
   "dependencies": {
+    "fastify": "^4.26.0",
     "next": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
