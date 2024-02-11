@@ -10,7 +10,7 @@ nextApp.prepare()
     const fastify = Fastify({
       logger: true,
     })
-
+    fastify.register(require('@fastify/multipart'))
     fastify.all('*', (req, reply) => nextHandle(req.raw, reply.raw))
 
     fastify.setNotFoundHandler((req, reply) =>

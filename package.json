@@ -9,6 +9,7 @@
     "clean-start:fastify": "next build && NODE_ENV=production node server.js"
   },
   "dependencies": {
+    "@fastify/multipart": "^8.1.0",
     "fastify": "^4.26.0",
     "next": "latest",
     "react": "^18.2.0",
